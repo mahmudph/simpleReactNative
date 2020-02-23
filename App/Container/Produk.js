@@ -1,0 +1,45 @@
+import React, { Component } from 'react';
+import { View, StyleSheet,StatusBar,  Image, Dimensions, Text } from 'react-native';
+
+
+
+class Produk extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true,
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() =>  this.setState({loading: false}), 3000);
+    }
+
+    render() {
+        return(
+            <View style={style.container}>
+                <StatusBar translucent backgroundColor="transparent" barStyle="light-content"/>
+                <View style={style.content}>
+                    <Text>hello world</Text>
+                </View>
+            </View>
+        );
+    }
+}
+
+
+const style = StyleSheet.create({
+    container: {
+        flex:1, 
+        flexDirection:'row',
+    },
+    content:  {
+        width: 200,
+        height:200,
+        justifyContent:'center',
+        alignItems:'center',
+    }
+});
+
+
+export default Produk;
